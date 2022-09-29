@@ -17,7 +17,7 @@ module.exports = {
       .setColor(0x037821)
       .setImage('https://images.hdqwalls.com/wallpapers/grand-theft-auto-online-4k-do.jpg')
       .setTimestamp();
-      .setFooter({ text: 'ARG Store', iconURL: 'https://i.imgur.com/gKhJ1Ld.png' });
+      .setFooter({ text: 'ARG Store', iconURL: 'https://i.imgur.com/gKhJ1Ld.png' })
 
     welcomeChannel.send({ embeds: [welcomeEmbed] });
   }
