@@ -6,7 +6,7 @@ module.exports = {
   name: "guildMemberAdd",
   async execute(member) {
     const { user, guild } = member;
-    const welcomeChannel = member.guild.channels.cache.get('881002532372086851');
+    const welcomeChannel = member.guild.channels.cache.get('1024742339735990433');
 
     const welcomeEmbed = new EmbedBuilder()
       .setTitle("**Bienvenido!**")
