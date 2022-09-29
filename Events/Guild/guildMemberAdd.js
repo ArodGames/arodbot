@@ -10,7 +10,9 @@ module.exports = {
 
     const welcomeEmbed = new EmbedBuilder()
       .setTitle("**Bienvenido!**")
-      .setDescription(`> Hola!, ¿Como estás? **<@${member.id}>** , bienvenido a mi servidor **ARG Store**!. **Cosas importantes** 
+      .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
+      .setDescription(`> Hola!, ¿Como estás? **<@${member.id}>** , bienvenido a mi servidor **ARG Store**!. 
+      **Cosas importantes** 
       > <#1013498919105351701>
       > <#1009118625254354984>`)
       .setColor(0x037821)
