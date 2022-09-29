@@ -13,14 +13,15 @@ module.exports = {
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel');
         const verifyEmbed = new EmbedBuilder()
-        .setTitle("Verification")
-        .setDescription('Click the button to verify your account and get access to the channels.')
+        .setTitle("ARG Store")
+        .setDescription('Bienvenid@ a nuestro querido servidor roleplay de MTA!, porfavor verificate para ver todos los canales!.')
+        .setImage('https://images.hdqwalls.com/wallpapers/grand-theft-auto-online-4k-do.jpg')
         .setColor(0x5fb041)
         let sendChannel = channel.send({
             embeds: ([verifyEmbed]),
             components: [
                 new ActionRowBuilder().setComponents(
-                    new ButtonBuilder().setCustomId('verify').setLabel('Verify').setStyle(ButtonStyle.Success),
+                    new ButtonBuilder().setCustomId('verify').setLabel('✅ Verify').setStyle(ButtonStyle.Success),
                 ),
             ],
         });
