@@ -11,10 +11,10 @@ module.exports = {
       }
       command.execute(interaction, client);
     } else if (interaction.isButton()) {
-      const role = interaction.guild.roles.cache.get("1011041531114815579");
+      const role = interaction.guild.roles.cache.get("1009653894567178250");
       return interaction.member.roles.add(role).then((member) =>
         interaction.reply({
-          content: `${role} has been assigned to you.`,
+          content: `${role} añadido correctamente!.`,
           ephemeral: true,
         })
       );
