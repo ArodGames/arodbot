@@ -1,28 +1,22 @@
-const {EmbedBuilder} = require("@discordjs/builders");
-const {GuildMember, Embed, InteractionCollector} = require("discord.js");
+const { EmbedBuilder } = require("@discordjs/builders");
+const { GuildMember, Embed, InteractionCollector } = require("discord.js");
 const Schema = require("../../Models/Welcome");
 
 module.exports = {
-    name: "guildMemberAdd",
-    async execute(member) {
-        Schema.findOne({Guild: member.guild.id}, async (err, data) => {
-            if (!data) return;
-            let channel = data.Channel;
-            let Msg = data.Msg || " ";
-            let Role = data.Role;
+  name: "guildMemberAdd",
+  async execute(member) {
+    const { user, guild } = member;
+    const welcomeChannel = member.guild.channels.cache.get('881002532372086851');
 
-            const {user, guild} = member;
-            const welcomeChannel = member.guild.channels.cache.get(data.Channel);
+    const welcomeEmbed = new EmbedBuilder()
+      .setTitle("**Bienvenido!**")
+      .setDescription(`> Hola!, ¿Como estás? **<@${member.id}>** , bienvenido a mi servidor **ARG Store**!. **Cosas importantes** 
+      > <#1013498919105351701>
+      > <#1009118625254354984>`)
+      .setColor(0x037821)
+      .setImage('https://media.discordapp.net/attachments/1024734457682464820/1025132794533384202/foto_1.jpg?width=722&height=406')
+      .setTimestamp();
 
-            const welcomeEmbed = new EmbedBuilder()
-            .setTitle("**New member!**")
-            .setDescription(data.Msg)
-            .setColor(0x037821)
-            .addFields({name: 'Total members', value: `${guild.memberCount}`})
-            .setTimestamp();
-
-            welcomeChannel.send({embeds: [welcomeEmbed]});
-            member.roles.add(data.Role);
-        })
-    }
+    welcomeChannel.send({ embeds: [welcomeEmbed] });
+  }
 }
