@@ -20,7 +20,7 @@ module.exports = {
     .addRoleOption(option =>
         option.setName("welcome-role")
         .setDescription("Enter your welcome role.")
-        .setRequired(true)    
+        .setRequired(false)    
     ),
 
     async execute(interaction) {
