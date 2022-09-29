@@ -10,14 +10,14 @@ module.exports = {
 
     const welcomeEmbed = new EmbedBuilder()
       .setTitle("**Bienvenido!**")
-      .setAuthor({ name: 'Some name', iconURL: 'https://i.imgur.com/AfFp7pu.png', url: 'https://discord.js.org' })
       .setDescription(`> Hola!, ¿Como estás? **<@${member.id}>** , bienvenido a mi servidor **ARG Store**!. 
       **Cosas importantes** 
       > <#1013498919105351701>
       > <#1009118625254354984>`)
       .setColor(0x037821)
-      .setImage('https://media.discordapp.net/attachments/1024734457682464820/1025132794533384202/foto_1.jpg?width=722&height=406')
+      .setImage('https://images.hdqwalls.com/wallpapers/grand-theft-auto-online-4k-do.jpg')
       .setTimestamp();
+      .setFooter({ text: 'ARG Store', iconURL: 'https://i.imgur.com/gKhJ1Ld.png' });
 
     welcomeChannel.send({ embeds: [welcomeEmbed] });
   }
