@@ -11,7 +11,7 @@ const client = new Client({
     partials: [User, Message, GuildMember, ThreadMember],
     presence: {
     activities: [{
-      name: "ARG Store!",
+      name: "ArodGames!",
       type: 0
     }],
     status: 'dnd'
