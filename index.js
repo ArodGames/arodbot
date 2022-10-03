@@ -1,4 +1,5 @@
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
+const { joinVoiceChannel } = require('@discordjs/voice');
 
 const {Guilds, GuildMembers, GuildMessages} = GatewayIntentBits;
 const {User, Message, GuildMember, ThreadMember, Channel} = Partials;
@@ -30,6 +31,26 @@ const client = new Client({
     status: 'dnd'
   }
 });
+
+client.on("ready", () => {
+  let canal = client.channels.cache.get("") // coloque o ID do canal de voz
+  if (!canal) return console.log("❌ Não foi possível entrar no canal de voz.")
+  if (canal.type !== Discord.ChannelType.GuildVoice) return console.log(`❌ Não foi possível entrar no canal [ ${canal.name} ].`)
+
+  try {
+
+    joinVoiceChannel({
+      channelId: canal.id, // ID do canal de voz
+      guildId: canal.guild.id, // ID do servidor
+      adapterCreator: canal.guild.voiceAdapterCreator,
+    })
+    console.log(`✅ Entrei no canal de voz [ ${canal.name} ] com sucesso!`)
+
+  } catch(e) {
+    console.log(`❌ Não foi possível entrar no canal [ ${canal.name} ].`)
+  }
+
+})
 
 client.commands = new Collection();
 client.config = require('./config.json');
