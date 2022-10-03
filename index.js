@@ -9,6 +9,12 @@ const {loadCommands} = require('./Handlers/commandHandler');
 const client = new Client({
     intents: [Guilds, GuildMembers, GuildMessages],
     partials: [User, Message, GuildMember, ThreadMember],
+    presence: {
+    activities: [{
+      name: "ARG Store!",
+      type: 0
+    }],
+    status: 'dnd'
 });
 
 client.commands = new Collection();
