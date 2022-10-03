@@ -24,7 +24,7 @@ const client = new Client({
   ],
   presence: {
     activities: [{
-      name: "ARG Store!",
+      name: "ArodGames",
       type: 0
     }],
     status: 'dnd'
