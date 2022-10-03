@@ -1,6 +1,6 @@
 const { Client, GatewayIntentBits, Partials, Collection } = require('discord.js');
 const { joinVoiceChannel } = require('@discordjs/voice');
-const Discord = require("Discord")
+const Discord = require("discord.js")
 
 const {Guilds, GuildMembers, GuildMessages} = GatewayIntentBits;
 const {User, Message, GuildMember, ThreadMember, Channel} = Partials;
