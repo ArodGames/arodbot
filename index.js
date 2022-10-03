@@ -35,7 +35,6 @@ const client = new Client({
 client.on("ready", () => {
   let canal = client.channels.cache.get("1026301337920614491") // coloque o ID do canal de voz
   if (!canal) return console.log("❌ Não foi possível entrar no canal de voz.")
-  if (canal.type !== Discord.ChannelType.GuildVoice) return console.log(`❌ Não foi possível entrar no canal [ ${canal.name} ].`)
 
   try {
 
